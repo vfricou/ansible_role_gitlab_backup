@@ -1,0 +1,19 @@
+---
+- name: "backup | clean | list old backup archives"
+  ansible.builtin.find:
+    paths: '{{ gitlab_backup_dest }}'
+    patterns: '*.tar'
+    age_stamp: ctime
+    age: '{{ gitlab_backup_retention }}'
+  register: backup_file_list
+
+- debug:
+    vars: backup_file_list
+
+- name: "backup | clean | remove old backup archives"
+  ansible.builtin.file:
+    path: '{{ item.path }}'
+    state: absent
+  loop:
+    - '{{ backup_file_list.files }}'
+

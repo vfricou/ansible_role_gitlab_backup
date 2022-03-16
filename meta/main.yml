@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  role_name: "gitlab_backup"
+  namespace: "vfricou"
+  author: Vincent FRICOU
+  description: 'Perfom GitLab instance backup'
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Rocky
+      versions:
+        - 8
+
+dependencies: []

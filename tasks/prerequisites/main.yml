@@ -1,0 +1,8 @@
+---
+- name: ensure backup directory exist
+  ansible.builtin.file:
+    path: "{{ gitlab_backup_dest }}"
+    state: directory
+    owner: git
+    group: git
+    mode: 0770

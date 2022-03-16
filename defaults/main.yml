@@ -1,0 +1,7 @@
+---
+# @var gitlab_backup_dest: '/var/opt/gitlab/backups' # Define gitlab backup target folder
+gitlab_backup_dest: '/var/opt/gitlab/backups'
+# @var gitlab_backup_retention: 7 # Define gitlab backup retention
+gitlab_backup_retention: 7
+# @var gitlab_backup_strategy: 'copy' # Define gitlab backup strategy
+gitlab_backup_strategy: 'copy'

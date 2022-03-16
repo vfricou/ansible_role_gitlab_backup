@@ -1,0 +1,9 @@
+---
+- name: "backup | perform gitlab backup"
+  ansible.builtin.shell: >
+    gitlab-rake
+    gitlab:backup:create
+    DIRECTORY={{ gitlab_backup_dest }}
+    STRATEGY={{ gitlab_backup_strategy }}
+    GZIP_RYNCABLE=yes
+    RAILS_ENV=production
